@@ -1,0 +1,14 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgba(252, 38, 0, 0.616);
+    color: #fff;
+}
+
+.container {
+    border: 2px solid black;
+}

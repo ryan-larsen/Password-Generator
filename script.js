@@ -1,9 +1,13 @@
+var resultEl = document.querySelector('#result')
+var makePasswordEl = document.querySelector('#makePassword')
+
 function passLength (length) {
     var upper = ''
     var lower = ''
     var number = ''
     var symbol = ''
     var password = ''
+    
 
     if (uppercase.checked === true) {
         upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
@@ -26,9 +30,14 @@ function passLength (length) {
     }
 
     for (var i = 0; i <length; i++) {
-        var x = Math.floor(Math.random() * passLength) 
+        var x = Math.floor(Math.random() * charSet1.length) 
         password += charSet1.charAt(x)
     }
     return password
 }
+
+makePasswordEl.addEventListener(function(){
+    event.preventDefault()
+    resultEl.value = passLength(length.value)
+})
 

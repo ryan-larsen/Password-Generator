@@ -1,5 +1,9 @@
 var resultEl = document.querySelector('#result')
-var makePasswordEl = document.querySelector('#makePassword')
+var uppercaseEl = document.querySelector('#uppercase')
+var lowercaseEl = document.querySelector('#lowercase')
+var numbersEl = document.querySelector('#numbers')
+var symbolsEl = document.querySelector('#symbols')
+var submitEl = document.querySelector('#submit')
 
 function passLength (length) {
     var upper = ''
@@ -9,22 +13,22 @@ function passLength (length) {
     var password = ''
     
 
-    if (uppercase.checked === true) {
+    if (uppercaseEl.checked === true) {
         upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
         charSet1 = charSet1.concat(upper)
     }
 
-    if (lowercase.checked === true) {
+    if (lowercaseEl.checked === true) {
         lower = 'abcdefghijklmnopqrstuvwxyz'
         charSet1 = charSet1.concat(lower)
     }
 
-    if (numbers.checked === true) {
+    if (numbersEl.checked === true) {
         number = '1234567890'
         charSet1 = charSet1.concat(number)
     }
 
-    if (symbols.checked === true) {
+    if (symbolsEl.checked === true) {
         symbol = '`~!@#$%^&*()_+[]\{}|;:,./<>?'
         charSet1 = charSet1.concat(symbol)
     }
@@ -36,8 +40,9 @@ function passLength (length) {
     return password
 }
 
-makePasswordEl.addEventListener(function(){
-    event.preventDefault()
-    resultEl.value = passLength(length.value)
-})
+submitEl.addEventListener('click', passLength).resultEl.textContent = password
+
+
+
+
 

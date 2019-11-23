@@ -35,13 +35,14 @@ function passLength (length) {
 
     for (var i = 0; i <length; i++) {
         var x = Math.floor(Math.random() * charSet1.length) 
-        password += charSet1.charAt(x)
+        password = charSet1.charAt(x)
     }
     return password
 }
 
-submitEl.addEventListener('click', passLength).resultEl.textContent = password
-
+submitEl.addEventListener('click', function(event){
+    resultEl.textContent = password
+})
 
 
 
